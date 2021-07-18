@@ -21,4 +21,9 @@ public class LoginPage extends BasePage{
 		 	clicarBotaoPorId(id);
 	 }
 	 
+	 public String obterMensagemErro(String xpath) {
+		 texto = obterTextoByXpath(xpath);
+		 return texto;
+	 }
+	 
 }
