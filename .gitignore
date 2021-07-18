@@ -1,3 +1,4 @@
+### Maven ###
 target/
 pom.xml.tag
 pom.xml.releaseBackup
@@ -9,3 +10,21 @@ buildNumber.properties
 .mvn/timing.properties
 # https://github.com/takari/maven-wrapper#usage-without-binary-jar
 .mvn/wrapper/maven-wrapper.jar
+/.metadata/
+
+### Eclipse
+.settings/
+.classpath
+.project
+
+### Java ###
+*.class
+
+### Package Files ###
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
