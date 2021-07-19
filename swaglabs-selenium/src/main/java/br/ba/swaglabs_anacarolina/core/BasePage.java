@@ -3,6 +3,8 @@ package br.ba.swaglabs_anacarolina.core;
 import static br.ba.swaglabs_anacarolina.core.DriverFactory.getDriver; //importa o método que cria uma instância do driver na classe DriverFactory
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 	
 	public class BasePage {
 		
@@ -18,7 +20,7 @@ import org.openqa.selenium.By;
 			getDriver().findElement(By.id(id_campo)).sendKeys(texto);
 		} 
 		
-		public void clicarBotaoPorId(String id) {
+		public void clicarItemPorId(String id) {
 			getDriver().findElement(By.id(id)).click();
 		}
 		
@@ -31,5 +33,15 @@ import org.openqa.selenium.By;
 			String texto = getDriver().findElement(By.xpath(xpath)).getText();
 			return texto;
 		}
-
+		
+		public String obterTextoById(String id) {
+			String texto = getDriver().findElement(By.id(id)).getText();
+			return texto;
+		}
+		
+		public void selecionarItemSelect(String classe, String valor) {
+			WebElement element = getDriver().findElement(By.className(classe));
+			Select select = new Select(element);
+			select.selectByVisibleText(valor);
+		}
 }

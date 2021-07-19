@@ -18,7 +18,7 @@ public class LoginPage extends BasePage{
 		} 
 	 
 	 public void clicarBotaoLogin(String id) {
-		 	clicarBotaoPorId(id);
+		 	clicarItemPorId(id);
 	 }
 	 
 	 public String obterMensagemErro(String xpath) {
