@@ -42,7 +42,6 @@ public class ItemMochilaTeste extends BaseTeste {
 	@Test
 	public void RemoverProdutoDoCarrinhoViaBotaoPaginaProduto() {
 		produtosPage.adicionarProdutoCarrinho("add-to-cart-sauce-labs-backpack");
-		Assert.assertEquals("REMOVE", produtosPage.obterTextoBotao("remove-sauce-labs-backpack"));
 		produtosPage.removerProdutoCarrinho("remove-sauce-labs-backpack");
 		Assert.assertEquals("ADD TO CART", produtosPage.obterTextoBotao("add-to-cart-sauce-labs-backpack"));
 	}

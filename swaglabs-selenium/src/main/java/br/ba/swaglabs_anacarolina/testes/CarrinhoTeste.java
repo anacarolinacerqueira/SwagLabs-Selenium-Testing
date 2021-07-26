@@ -34,16 +34,6 @@ public class CarrinhoTeste extends BaseTeste {
 		Assert.assertEquals("$29.99", valor);
 	}
 	
-	@Ignore
-	@Test
-	public void adicionarDoiItensEChecaValor() {
-		produtosPage.clicarItemPorId("add-to-cart-sauce-labs-backpack");
-		produtosPage.clicarItemPorId("add-to-cart-sauce-labs-bike-light");
-		carrinhoPage.clicarCarrinho("shopping_cart_link");
-		String valor = carrinhoPage.obterValordaCompra("inventory_item_price");
-		Assert.assertEquals("$29.99", valor);
-	}
-	
 	@Test
 	public void removerItemPelaTelaDeCarrinho() {
 		produtosPage.adicionarProdutoCarrinho("add-to-cart-sauce-labs-backpack");
