@@ -17,7 +17,7 @@ public class DriverFactory {
 					case Firefox: driver = new FirefoxDriver(); break;
 					case Chrome: driver = new ChromeDriver(); break;
 				}
-				driver.manage().window().setSize(new Dimension(1200, 765));			
+				driver.manage().window().maximize();			
 			}
 			return driver;
 		}

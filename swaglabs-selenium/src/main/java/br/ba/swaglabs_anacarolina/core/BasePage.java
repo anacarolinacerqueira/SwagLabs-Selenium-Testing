@@ -2,9 +2,14 @@ package br.ba.swaglabs_anacarolina.core;
 
 import static br.ba.swaglabs_anacarolina.core.DriverFactory.getDriver; //importa o método que cria uma instância do driver na classe DriverFactory
 
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 	
 	public class BasePage {
 		
@@ -24,6 +29,14 @@ import org.openqa.selenium.support.ui.Select;
 			getDriver().findElement(By.id(id)).click();
 		}
 		
+		public void clicarItemPorClasse(String classe) {
+			getDriver().findElement(By.className(classe)).click();
+		}
+		
+		public void espera(int segundos) {
+			getDriver().manage().timeouts().implicitlyWait(segundos, TimeUnit.SECONDS);
+		}
+		
 		public String obterUrlAtual() {
 			String url = getDriver().getCurrentUrl();
 			return url;
@@ -39,9 +52,20 @@ import org.openqa.selenium.support.ui.Select;
 			return texto;
 		}
 		
+		public String obterTextoByClasse(String classe) {
+			String texto = getDriver().findElement(By.className(classe)).getText();
+			return texto;
+		}
+		
 		public void selecionarItemSelect(String classe, String valor) {
 			WebElement element = getDriver().findElement(By.className(classe));
 			Select select = new Select(element);
 			select.selectByVisibleText(valor);
 		}
+		
+		public boolean checarItemVisivelPorId(String id) {
+			boolean visivel = getDriver().findElement(By.id(id)).isDisplayed();
+			return visivel;
+		}
+		
 }

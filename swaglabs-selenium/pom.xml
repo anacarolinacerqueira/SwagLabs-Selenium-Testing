@@ -4,6 +4,7 @@
   <artifactId>swaglabs-selenium</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <description>selenium-junit-test</description>
+
   
   <dependencies>
   	<dependency>
